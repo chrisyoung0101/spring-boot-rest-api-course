@@ -8,17 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GetSingleEmployeePathVariableController {
 
-<<<<<<< HEAD
+
         //NOTE : adding a number to the URI so they can be unique to each controller otherwise this ain't gonna work
                 //Like : "/employees3/{id}"
 
        //Fire extinguisher 🧯
 
-=======
-        //NOTE : adding a number to the URI so they can be unique to each controller otherwise this shit ain't gonna work
-                //Like : "/employees3/{id}"
-
->>>>>>> origin/master
         //localhost:8080/employees
 
         //min 29:00
