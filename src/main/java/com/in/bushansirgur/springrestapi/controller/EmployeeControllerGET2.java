@@ -5,10 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 //Combination of @Controller + @ResponseBody
 @RestController
-public class EmployeeControllerGET2 {
-
-    //NOTE : adding a number to the URI so they can be unique to each controller otherwise this ain't gonna work
-    //Like : "/employees3/{id}"
+public class EmployeeController2 {
 
     //localhost:8080/employees where /employees is the URI
 
@@ -17,5 +14,6 @@ public class EmployeeControllerGET2 {
     public String getEmployees () {
         return "displaying list of employees2";
     }
+
 
 }
