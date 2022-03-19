@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class EmployeeControllerGET1 {
 
-    //NOTE : adding a number to the URI so they can be unique to each controller otherwise this shit ain't gonna work
+    //NOTE : adding a number to the URI so they can be unique to each controller otherwise this ain't gonna work
     //Like : "/employees3/{id}"
 
     //localhost:8080/employees where /employees is the URI
