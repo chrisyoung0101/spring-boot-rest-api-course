@@ -1,11 +1,11 @@
 package com.in.bushansirgur.springrestapi.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 //Combination of @Controller + @ResponseBody
 @RestController
-public class EmployeeController2 {
+public class EmployeeControllerGET2 {
 
     //localhost:8080/employees where /employees is the URI
 
@@ -14,6 +14,5 @@ public class EmployeeController2 {
     public String getEmployees () {
         return "displaying list of employees2";
     }
-
 
 }

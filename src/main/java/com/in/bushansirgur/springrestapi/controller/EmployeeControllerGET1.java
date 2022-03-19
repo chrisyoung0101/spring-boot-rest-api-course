@@ -1,17 +1,14 @@
 package com.in.bushansirgur.springrestapi.controller;
 
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 //annotation makes this class responsible for HTTP requests
 //Server sends requests to this class
-//
 @Controller
-public class EmployeeController1 {
+public class EmployeeControllerGET1 {
 
     //localhost:8080/employees where /employees is the URI
 
@@ -22,6 +19,5 @@ public class EmployeeController1 {
     public String getEmployees () {
         return "displaying list of employees1";
     }
-
 
 }
