@@ -20,6 +20,11 @@ dependencies {
 	// lombok plugin required
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.4'
+	runtimeOnly 'mysql:mysql-connector-java'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 

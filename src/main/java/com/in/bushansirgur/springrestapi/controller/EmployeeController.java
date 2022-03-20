@@ -9,33 +9,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+//@RequestMapping("/api/v1") //this makes the URI : localhost:8080/api/v1/main-employees  ***see application.properties***
 public class EmployeeController {
 
 
     //Note : this controller is all the other controller handler methods put together
     //Each of the other controllers were created to simply single out each handler method and add more detailed notes...
 
-    @Autowired
-    private EmployeeService employeeService;
 
 
+    /*
+    /**********************Demo Stuff*****************************/
 
     //getting values from applications.properties
-    //note : {app.name: Employee Tracker} where Employee Tracker is a default value.  This is useful if our property value is commented out which would cause an error without the default to fall back on.
-    @Value("${app.name}")
-    private String appName;
+//    //note : {app.name: Employee Tracker} where Employee Tracker is a default value.  This is useful if our property value is commented out which would cause an error without the default to fall back on.
+//    @Value("${app.name}")
+//    private String appName;
+//
+//    @Value("${app.version}")
+//    private String appVersion;
+//
+//    //returns the app name and version
+//    @GetMapping("/version")
+//    public String getAppDetails () {
+//        return appName+" - "+appVersion;
+//    }
 
-    @Value("${app.version}")
-    private String appVersion;
-
-    //returns the app name and version
-    @GetMapping("/version")
-    public String getAppDetails () {
-        return appName+" - "+appVersion;
-    }
+    /*
+    /**********************Employee Handler Methods*****************************/
 
 
-    // Employee Handler Methods
+    @Autowired
+    private EmployeeService employeeService;
 
     //localhost:8080/main-employees
     @GetMapping("/main-employees")
@@ -71,7 +76,18 @@ public class EmployeeController {
 }
 
 
+//notes
+
 //Jackson API : JSON property & @JsonIgnore are the two most important
 //What if we wanted to not return on of the properties we get from the HTTP Response JSON?
 // Like ignore sensitive data from the user object that could have the email, password, etc?
 
+/*
+* entity class will map to the table
+* dependencies to connect to mysql db :
+* mysql connector
+* data jpa : java persistence api - which is a specification - default implementation of data jpa is hibernate - dat jpa
+* is an ORM framework that allows us to use the java object (and not have to write sql queries) to persist the data to the db
+* configure datasource in this java app
+*
+* */
