@@ -1,5 +1,6 @@
 package com.in.bushansirgur.springrestapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,6 +22,7 @@ public class Employee {
 //    }
 
     private String name;
+    @JsonIgnore //age will not be returned in the response body
     private Long age;
     private String location;
     private String email;

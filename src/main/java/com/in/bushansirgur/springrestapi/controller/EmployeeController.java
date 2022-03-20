@@ -48,8 +48,9 @@ public class EmployeeController {
 
     //localhost:8080//main-employees/6548
     @PutMapping("/main-employees/{id}")
-    public String updateEmployee (@PathVariable Long id, @RequestBody Employee employee) {
-        return "updating the employee data for the id "+id;
+    public Employee updateEmployee (@PathVariable Long id, @RequestBody Employee employee) {
+        System.out.println("updating the employee data for the id "+id);
+        return employee;
     }
 
     //localhost:8080/main-employees?id=345345
@@ -59,3 +60,8 @@ public class EmployeeController {
     }
 
 }
+
+
+//Jackson API : JSON property & @JsonIgnore are the two most important
+//What if we wanted to not return on of the properties we get from the HTTP Response JSON?
+// Like ignore sensitive data from the user object that could have the email, password, etc?
