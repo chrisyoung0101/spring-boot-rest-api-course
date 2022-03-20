@@ -1,6 +1,7 @@
 package com.in.bushansirgur.springrestapi.controller;
 
 import com.in.bushansirgur.springrestapi.model.Employee;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,6 +10,23 @@ public class EmployeeController {
 
     //Note : this controller is all the other controller handler methods put together
     //Each of the other controllers were created to simply single out each handler method and add more detailed notes...
+
+    //getting values from applications.properties
+    //note : {app.name: Employee Tracker} where Employee Tracker is a default value.  This is useful if our property value is commented out which would cause an error without the default to fall back on.
+    @Value("${app.name}")
+    private String appName;
+
+    @Value("${app.version}")
+    private String appVersion;
+
+    //returns the app name and version
+    @GetMapping("/version")
+    public String getAppDetails () {
+        return appName+" - "+appVersion;
+    }
+
+
+    // Employee Handler Methods
 
     //localhost:8080/main-employees
     @GetMapping("/main-employees")
