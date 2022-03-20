@@ -1,8 +1,12 @@
 package com.in.bushansirgur.springrestapi.controller;
 
 import com.in.bushansirgur.springrestapi.model.Employee;
+import com.in.bushansirgur.springrestapi.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -10,6 +14,11 @@ public class EmployeeController {
 
     //Note : this controller is all the other controller handler methods put together
     //Each of the other controllers were created to simply single out each handler method and add more detailed notes...
+
+    @Autowired
+    private EmployeeService employeeService;
+
+
 
     //getting values from applications.properties
     //note : {app.name: Employee Tracker} where Employee Tracker is a default value.  This is useful if our property value is commented out which would cause an error without the default to fall back on.
@@ -30,8 +39,8 @@ public class EmployeeController {
 
     //localhost:8080/main-employees
     @GetMapping("/main-employees")
-    public String getEmployees () {
-        return "displaying the list of employees";
+    public List<Employee> getEmployees () {
+        return employeeService.getEmployees();
     }
 
     //http://localhost:8080/main-employees/858
@@ -65,3 +74,4 @@ public class EmployeeController {
 //Jackson API : JSON property & @JsonIgnore are the two most important
 //What if we wanted to not return on of the properties we get from the HTTP Response JSON?
 // Like ignore sensitive data from the user object that could have the email, password, etc?
+

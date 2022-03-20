@@ -17,6 +17,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools' //no need to stop /start server when we make changes
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// lombok plugin required
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 }
